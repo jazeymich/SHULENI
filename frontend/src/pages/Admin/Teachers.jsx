@@ -1,7 +1,42 @@
 import React, { useState, useEffect } from 'react';
+import Sidebar from './Sidebar';
+import axios from 'axios';
 
-const Teachers  = () => {
-  return <div>AdminDashboard</div>;
+import {
+  TeachersContainer,
+  Content,
+  TeachersContent,
+  TeachersHeader,
+  TeacherList,
+  TeacherItem,
+  AddTeacherForm,
+  AddTeacherInput,
+  AddTeacherButton,
+} from '../../styles/TeachersStyles';
+
+const Teachers = () => {
+  return (
+    <TeachersContainer>
+      <Sidebar />
+      <Content>
+        <TeachersContent>
+          <TeachersHeader>
+            <AddTeacherForm>
+              <AddTeacherInput type="submit" placeholder="Enter Teacher Name" />
+              <AddTeacherInput type="email" placeholder="Enter Teacher email" />
+              <AddTeacherInput
+                type="text"
+                placeholder="Enter Teacher Subject"
+              />
+              <AddTeacherButton type="submit">Add Teacher</AddTeacherButton>
+            </AddTeacherForm>
+
+            <TeacherList></TeacherList>
+          </TeachersHeader>
+        </TeachersContent>
+      </Content>
+    </TeachersContainer>
+  );
 };
 
 export default Teachers;

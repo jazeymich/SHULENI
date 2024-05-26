@@ -20,6 +20,7 @@ import {
 const AdminDashboard = () => {
   return (
     <AdminDashboardContainer>
+      <Sidebar/>
       <Content>
         <TopContent>
           <Section>
@@ -46,9 +47,7 @@ const AdminDashboard = () => {
         </TopContent>
 
         <BottomContent>
-          <Performance>
-          <SectionTitle>Students Performance</SectionTitle>
-          </Performance>
+          <Performance /> 
           <Announcement />
         </BottomContent>
       </Content>
