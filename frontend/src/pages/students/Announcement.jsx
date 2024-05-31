@@ -24,11 +24,7 @@ const AnnouncementSection = () => {
       <Content>
         <AnnouncementHeader>Announcements</AnnouncementHeader>
         <AnnouncementList>
-          {announcements.map((announcement) => (
-            <AnnouncementItem key={announcement._id}>
-              <AnnouncementTitle>{announcement.announcement}</AnnouncementTitle>
-            </AnnouncementItem>
-          ))}
+          
         </AnnouncementList>
       </Content>
     </AnnouncementContainer>

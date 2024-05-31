@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 export const AttendanceContainer = styled.div`
   display: flex;
-  padding-left: 240px;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -57,7 +56,6 @@ export const SubmitButton = styled.button`
   border-radius: 4px;
   cursor: pointer;
 `;
-
 
 export const SidebarContainer = styled.div`
   flex: 0 0 250px; /* Sidebar width */

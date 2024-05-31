@@ -12,9 +12,16 @@ import {
   Value,
 } from '../../styles/SettingsProfileStyles'; // Import styled components from ProfileSectionStyles.js
 
-
-
 const ProfileSection = () => {
+  // Sample student profile data
+  const studentProfile = {
+    name: 'John Doe',
+    age: 18,
+    grade: '12th',
+    school: 'Example High School',
+    email: 'john.doe@example.com',
+  };
+
   return (<div>Profile</div>)(
     <ProfileContainer>
       <SidebarContainer>

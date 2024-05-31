@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import Sidebar from './Sidebar';
-
+import { Bar } from 'react-chartjs-2';
 
 import {
   ExamContainer,
@@ -14,6 +14,38 @@ import {
 } from '../../styles/ExamStyles';
 
 const ExamSection = () => {
+  // Sample exam results data
+  const examResultsData = {
+    subjects: ['Math', 'Science', 'English', 'History'],
+    results: [80, 75, 90, 85], // Sample results out of 100
+  };
+
+  const barChartData = {
+    labels: examResultsData.subjects,
+    datasets: [
+      {
+        label: 'Exam Results',
+        backgroundColor: '#007bff',
+        borderColor: '#007bff',
+        borderWidth: 1,
+        hoverBackgroundColor: '#0056b3',
+        hoverBorderColor: '#0056b3',
+        data: examResultsData.results,
+      },
+    ],
+  };
+
+  // Chart options
+  const chartOptions = {
+    scales: {
+      y: {
+        type: 'linear',
+        beginAtZero: true,
+        max: 100,
+      },
+    },
+  };
+
   return (
     <ExamContainer>
       <SidebarContainer>
@@ -22,7 +54,16 @@ const ExamSection = () => {
       <Content>
         <ExamHeader>Exam Results</ExamHeader>
         <ExamResultsContainer>
-          <ExamChartContainer></ExamChartContainer>
+          {examResultsData.subjects.map((subject, index) => (
+            <div key={index}>
+              <ExamSubject>{subject}</ExamSubject>
+              <ExamResult>Score: {examResultsData.results[index]}%</ExamResult>
+            </div>
+          ))}
+          <ExamChartContainer>
+            {' '}
+            <Bar ref={chartRef} data={barChartData} options={chartOptions} />
+          </ExamChartContainer>
         </ExamResultsContainer>
       </Content>
     </ExamContainer>
