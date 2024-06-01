@@ -4,9 +4,16 @@ import ChooseUser from './components/Chooseuser';
 import AdminSignIn from './components/Adminsignin';
 import StudentSignIn from './components/Studentsignin';
 import TeacherSignIn from './components/Teachersignin';
-import AdminDashboard from './pages/Admin/Dashboard';
-import Classes from './pages/Admin/Classes';
 
+
+//import the dashboards
+import AdminDashboard from './pages/Admin/Dashboard';
+import StudentDashboard from './pages/students/Dashboard';
+import TeacherDashboard from './pages/Teachers/Dashboard';
+
+
+//import the admin sections
+import Classes from './pages/Admin/Classes';
 import Exam from './pages/Admin/Exam';
 import Attendance from './pages/Admin/Attendance';
 import Performance from './pages/Admin/performance';
@@ -18,7 +25,7 @@ import Eventcalendar from './pages/Admin/Eventcalendar';
 import SettingsProfile from './pages/Admin/Settingsprofile';
 import Announcement from './pages/Admin/Announcement';
 
-import StudentDashboard from './pages/students/Dashboard';
+//import students sections
 import StudentAssignments from './pages/students/Assignment';
 import ExamSection from '../src/pages/students/Exams';
 import PerformanceSection from '../src/pages/students/Performance';
@@ -26,6 +33,22 @@ import AttendanceSection from '../src/pages/students/Attendance';
 import LibrarySection from '../src/pages/students/Library';
 import AnnouncementSection from '../src/pages/students/Announcement';
 import ProfileSection from '../src/pages/students/Profile';
+
+
+//import students sections
+import ClassSection from '../src/pages/Teachers/Classes';
+import StudentSection from '../src/pages/Teachers/Students';
+import TeacherSection from '../src/pages/Teachers/Teachers';
+import CheckPerformanceSection from '../src/pages/Teachers/Performance';
+import EventSection from '../src/pages/Teachers/Events';
+import TeacherProfileSection from '../src/pages/Teachers/Profile';
+import CheckAnnouncementSection from '../src/pages/Teachers/Announcement';
+import AssignmentSection from '../src/pages/Teachers/Assignments';
+import CheckAttendanceSection from '../src/pages/Teachers/Attendance';
+import CheckExamSection from '../src/pages/Teachers/Exams';
+
+
+
 
 function App() {
   return (
@@ -41,6 +64,7 @@ function App() {
         {/* All the dashboard routes */}
         <Route exact path="/admin/dashboard" element={<AdminDashboard />} />
         <Route exact path="/student/dashboard" element={<StudentDashboard />} />
+        <Route exact path="/teacher/dashboard" element={<TeacherDashboard />} />
 
         {/* Admin sections here */}
         <Route exact path="/admin/classes" element={<Classes />} />
@@ -63,6 +87,20 @@ function App() {
         <Route exact path="/student/library" element={<LibrarySection />} />
         <Route exact path="/student/communication" element={<AnnouncementSection/>} />
         <Route exact path="/student/settings" element={<ProfileSection />} />
+
+        {/* Teachers section */}
+        <Route exact path="/teacher/classes" element={<ClassSection />} />
+        <Route exact path="/teacher/students" element={<StudentSection />} />
+        <Route exact path="/teacher/teachers" element={<TeacherSection />} />
+        <Route exact path="/teacher/assignments" element={<AssignmentSection />} />
+        <Route exact path="/teacher/exams" element={<CheckExamSection />} />
+        <Route exact path="/teacher/performance" element={<CheckPerformanceSection />} />
+        <Route exact path="/teacher/attendance" element={<CheckAttendanceSection />} />
+        <Route exact path="/teacher/communication" element={<CheckAnnouncementSection />} />
+        <Route exact path="/teacher/events" element={<EventSection />} />
+        <Route exact path="/teacher/settings" element={<TeacherProfileSection/>} />
+
+
 
 
 

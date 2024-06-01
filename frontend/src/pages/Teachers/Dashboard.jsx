@@ -1,8 +1,16 @@
 // TeacherDashboard.js
 import React from 'react';
 import Sidebar from './Sidebar';
-import { TeacherDashboardContainer, Content, Section, SectionTitle, CardContainer, Card, CardTitle, CardContent } 
-from '../../styles/DashboardStyles';
+import {
+  TeacherDashboardContainer,
+  Content,
+  Section,
+  SectionTitle,
+  CardContainer,
+  Card,
+  CardTitle,
+  CardContent,
+} from '../../styles/DashboardStyles';
 
 const TeacherDashboard = () => {
   return (
@@ -14,7 +22,7 @@ const TeacherDashboard = () => {
           <CardContainer>
             <Card>
               <CardTitle>Total Students</CardTitle>
-              <CardContent>500</CardContent>
+              <CardContent>600</CardContent>
             </Card>
             <Card>
               <CardTitle>Total Teachers</CardTitle>
