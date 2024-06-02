@@ -1,11 +1,11 @@
 import express from 'express';
 import {
-  createStudent,
-  getAllStudents,
-} from '../controllers/studentController.js';
+  createAssignment ,
+  getAllAssignments,
+} from '../controllers/assignmentController.js';
 
 const router = express.Router();
-router.get('/getall', getAllStudents);
-router.post('/', createStudent);
+router.get('/getall', getAllAssignments);
+router.post('/', createAssignment);
 
 export default router;

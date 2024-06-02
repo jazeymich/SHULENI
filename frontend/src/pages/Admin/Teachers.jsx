@@ -15,6 +15,29 @@ import {
 } from '../../styles/TeachersStyles';
 
 const Teachers = () => {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   return (
     <TeachersContainer>
       <Sidebar />
