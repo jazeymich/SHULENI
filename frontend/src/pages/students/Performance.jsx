@@ -59,7 +59,7 @@ const PerformanceSection = () => {
               }}
             />
           </PerformanceGraphContainer>
-          <TotalMarks>Total Marks:{performanceData.totalMarks} </TotalMarks>
+          <TotalMarks>Total Marks: {performanceData.totalMarks}</TotalMarks>
         </PerformanceInfo>
       </Content>
     </PerformanceContainer>

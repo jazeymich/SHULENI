@@ -2,11 +2,57 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Sidebar from './Sidebar';
-import { AnnouncementContainer, Content, Title, AnnouncementForm, FormGroup, Label, TextArea, Button, AnnouncementList, AnnouncementItem, 
-  AnnouncementContent } from '../../styles/AnnouncementStyles';
+import {
+  AnnouncementContainer,
+  Content,
+  Title,
+  AnnouncementForm,
+  FormGroup,
+  Label,
+  TextArea,
+  Button,
+  AnnouncementList,
+  AnnouncementItem,
+  AnnouncementContent,
+} from '../../styles/AnnouncementStyles';
 
 const CheckAnnouncementSection = () => {
- 
+  const [announcement, setAnnouncement] = useState('');
+  const [announcements, setAnnouncements] = useState([]);
+  const [error, setError] = useState(null);
+
+  const fetchAnnouncements = async () => {
+    try {
+      const response = await axios.get(
+        'http://localhost:4000/api/v1/announcements/getall'
+      );
+      setAnnouncements(response.data.announcements);
+    } catch (error) {
+      console.error('Error fetching announcements:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchAnnouncements();
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        'http://localhost:4000/api/v1/announcements',
+        {
+          announcement: announcement,
+        }
+      );
+      console.log('Announcement sent:', response.data);
+      setAnnouncement('');
+      fetchAnnouncements();
+    } catch (error) {
+      console.error('Error sending announcement:', error);
+      setError('Error sending announcement');
+    }
+  };
 
   return (
     <AnnouncementContainer>
@@ -32,7 +78,9 @@ const CheckAnnouncementSection = () => {
         <AnnouncementList>
           {announcements.map((announcement) => (
             <AnnouncementItem key={announcement._id}>
-              <AnnouncementContent>{announcement.announcement}</AnnouncementContent>
+              <AnnouncementContent>
+                {announcement.announcement}
+              </AnnouncementContent>
             </AnnouncementItem>
           ))}
         </AnnouncementList>

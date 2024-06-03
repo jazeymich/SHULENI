@@ -5,7 +5,18 @@ import { PerformanceContainer, Content, PerformanceContent, PerformanceHeader, S
 from '../../styles/PerformanceStyles'; 
 
 const CheckPerformanceSection = () => {
-  
+   // Sample data for school performance
+   const schoolPerformanceData = {
+    averageScore: 85,
+    totalStudents: 100,
+  };
+
+  // Sample data for individual student performance
+  const individualPerformanceData = [
+    { id: 1, name: 'John Doe', score: 90 },
+    { id: 2, name: 'Jane Smith', score: 85 },
+    { id: 3, name: 'Michael Johnson', score: 92 },
+  ];
 
   return (
     <PerformanceContainer>
